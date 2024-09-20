@@ -10,6 +10,8 @@ Drive Controller usage.
  
  Add wheel colliders for all wheels in Drive wheels
 
+Wheel colliders should have a suspension distance of 0 damping rate of 6 mass of 1 radius is in m(it is somehow scaled properly) Suspension spring settings should be Spring 40000 Damper 80000 target position 0 Forward friction (default) sidways friction Extremum value 2 (default rest) For H drive the extremum should be 0.01 with a slip of 0.1 stiffness of 0.1. mirror for all directions and types.
+
  Add the relevant script to the wheels. TankWheel for forward facing "stationary wheels" and HWheel for wheels runinig 90deg to the front of the robot, Swerve wheel for swerve wheels
 
  Robot type is set from the Enums in the other scripts folder.
