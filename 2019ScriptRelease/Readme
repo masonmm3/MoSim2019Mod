@@ -1,1 +1,39 @@
-Usage information for the 2019 scripts goes here
+This is the script release for Mo Sim 2019. Highlights are DriveController V2 (named DriveController) which pushes the physics of Mo Sims driving to the next step. Robot Spawn Controller allowing for up to two players at a time while using 1 prefab for each robot. Ball Handler features dynamic animations based on the location of the ball. Limelight features a rough implementation for a angle error limited sight vision system. 
+
+Drive Controller usage.
+
+ Preparing the drive Train.
+
+ Create two empty objects name one Raycasts, the other Drive Wheels
+
+ Add Points situated in the lower 1/3 of all wheels for the raycasts
+ 
+ Add wheel colliders for all wheels in Drive wheels
+
+ Add the relevant script to the wheels. TankWheel for forward facing "stationary wheels" and HWheel for wheels runinig 90deg to the front of the robot, Swerve wheel for swerve wheels
+
+ Robot type is set from the Enums in the other scripts folder.
+
+ Drive train types currently supported are Hdrive, Tank, Swerve.
+
+ Customizable bumper numbers are standard.
+
+ Ray casts must be put in specific order depending on drive train type.
+  Tank is Lf,Rf,Lc,Rc,Lr,Rr. All tanks must be 6wd (3 each side)
+  Hdrive is Lf,Rf,Lc,Rc,Lr,Rr,C. All Hdrives must be 6wd (3 each side)
+  Swerve is Lf, Rf, Lr, Rr All raycasts must be centered on the Rigibody and the models must be aligned correctly or it will not work
+
+ Swerve wheels
+  Same patern as the Raycast
+
+ Leave Field unassigned
+
+ Max speed sets a max linear speed for the robot separate from the acceleration
+
+ Swerve steer multiplier can be used once everything is working correctly to tune steering. (may hide alignment issues if you play with it too early)
+
+ Material prefab should be RedBumper Mat the Blue mat
+
+ Bumper should have a list of all bumper parts that will be changed
+
+ Target offset and Valid vision are just passthrough publics for the limelight
